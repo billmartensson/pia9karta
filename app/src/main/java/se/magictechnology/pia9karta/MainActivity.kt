@@ -56,6 +56,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
 
+        findViewById<Button>(R.id.addMarkerButton).setOnClickListener {
+
+            val sydney = LatLng(-33.852, 151.211)
+
+            var mypos = MarkerOptions()
+            mypos.title("Sydney")
+            mypos.position(sydney)
+
+            gmap.addMarker(mypos)
+        }
+
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
